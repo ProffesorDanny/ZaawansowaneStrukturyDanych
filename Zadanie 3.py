@@ -82,5 +82,6 @@ if __name__ == "__main__":
         PREFIX (wyraz) - sprawdź podany prefix
         DELETE (wyraz) - usuwa wyraz z listy
         NAJDLUZSZY - zwraca najdłuższy wyraz
-        ---------------------------""")
+        ---------------------------
+        Uwaga: Nie używaj polskich znaków""")
     main(trie)
