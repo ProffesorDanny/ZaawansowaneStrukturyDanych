@@ -23,7 +23,6 @@ Zadanie 3
 W zadaniu umieszczony jest kod z wykładu dotyczący drzew Prefiksowych. Dodany do niego jest prosty fragment kodu, który pozwoli na interakcję z drzewem za pomocą konsoli
 -dla przykładu dodana została funkcja wyszukująca najkrótszy wyraz. Może będzie ona jakimś punktem odniesienia (dodam ją w najbliższym czasie)
 -do istniejących funkcji dopisz jedną pozwalającą na wypisanie najdłuższego z wyrazów
--dodaj też funkcję, która pozwoli usunąć wyraz z tabeli, zwróć uwagę na to, że niektóre wyrazy mogą być wyrazami ze wspólnej rodziny jak zwierzę i zwierzęta. Weź to pod uwagę.
 
 Zadanie 4
 

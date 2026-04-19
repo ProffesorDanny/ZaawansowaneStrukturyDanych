@@ -1,3 +1,6 @@
+
+
+
 def main(trie):
     continuation = False
     while not continuation:
@@ -18,7 +21,8 @@ def main(trie):
             else:
                 print("Prefixu nie ma w tabeli")
         elif consoleIn[0] == "DELETE":
-            pass
+            trie.delete(consoleIn[1])
+            print("Usunięto zbędną zawartość")
         elif consoleIn[0] == "NAJDLUZSZY":
             pass #POLECAM JAKĄŚ REKURENCJE
         else:
@@ -57,6 +61,36 @@ class Trie:
             curr = curr.children[index]
 
         return curr.isEndOfWord
+
+    def delete(self, key, curr=None, depth=0):
+
+        if curr is None:
+            curr = self.root
+
+        if depth == len(key):
+            if not curr.isEndOfWord:
+                return False
+
+            curr.isEndOfWord = False
+            if all(c is None for c in curr.children):
+                return True
+            return False
+
+        index = ord(key[depth]) - ord('a')
+        child_node = curr.children[index]
+
+        if child_node is None:
+            return False
+
+        should_delete_child = self.delete(key, child_node, depth + 1)
+
+        if should_delete_child:
+            curr.children[index] = None
+            return not curr.isEndOfWord and all(c is None for c in curr.children)
+
+        return False
+
+
 
     def isPrefix(self, prefix):
         curr = self.root
