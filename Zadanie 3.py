@@ -10,6 +10,7 @@ def main(trie):
             continuation = True
         elif consoleIn[0] == "INSERT":
             trie.insert(consoleIn[1])
+            print("Dodano")
         elif consoleIn[0] == "SEARCH":
             if trie.search(consoleIn[1]):
                 print("Wyraz jest w tabeli")
@@ -25,6 +26,8 @@ def main(trie):
             print("Usunięto zbędną zawartość")
         elif consoleIn[0] == "NAJDLUZSZY":
             pass #POLECAM JAKĄŚ REKURENCJE
+        elif consoleIn[0] == "NAJKROTSZY":
+            print(trie.shortest())
         else:
             print("Nieznana Operacja")
 
@@ -101,6 +104,26 @@ class Trie:
             curr = curr.children[index]
         return True
 
+    def shortest(self, current_level=None):
+        if current_level is None:
+            current_level = [(self.root, "")]
+
+        if not current_level:
+            return ""
+
+        next_level = []
+
+        for node, path in current_level:
+            for i, child in enumerate(node.children):
+                if child is not None:
+                    new_path = path + chr(i + ord('a'))
+
+                    if child.isEndOfWord:
+                        return new_path
+                    next_level.append((child, new_path))
+        return self.shortest(next_level)
+
+
 if __name__ == "__main__":
     trie = Trie()
     #Wypełnienie kodu przykładowymi Stringami
@@ -116,6 +139,7 @@ if __name__ == "__main__":
         PREFIX (wyraz) - sprawdź podany prefix
         DELETE (wyraz) - usuwa wyraz z listy
         NAJDLUZSZY - zwraca najdłuższy wyraz
+        NAJKROTSZY - zwraca najkrutszy wyraz
         ---------------------------
         Uwaga: Nie używaj polskich znaków""")
     main(trie)

@@ -21,7 +21,7 @@ pewne transakcje między klientami w formacie do odczytywania przez jakiś algor
 Zadanie 3
 
 W zadaniu umieszczony jest kod z wykładu dotyczący drzew Prefiksowych. Dodany do niego jest prosty fragment kodu, który pozwoli na interakcję z drzewem za pomocą konsoli
--dla przykładu dodana została funkcja wyszukująca najkrótszy wyraz. Może będzie ona jakimś punktem odniesienia (dodam ją w najbliższym czasie)
+-dla przykładu dodana została funkcja wyszukująca najkrótszy wyraz. Może będzie ona jakimś punktem odniesienia (posiada ona rekurencję wszerz, ale spróbuj w podobny sposób zrobić rekurencję wzdłuż) 
 -do istniejących funkcji dopisz jedną pozwalającą na wypisanie najdłuższego z wyrazów
 
 Zadanie 4
